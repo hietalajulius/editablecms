@@ -26,10 +26,12 @@
 }
 
 nav {
-    position: sticky;
-	text-align: center;
-	background-color: rgba(159, 90, 253, 0.1);
-    top: 0;
+	text-align: end;
+	background-color: rgba(159, 90, 253, 0);
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+	z-index: 1000;
 }
 
 .header-nav {
@@ -55,7 +57,7 @@ nav {
     li {
 
 		+ .header-button {
-			margin: $header-nav--padding-h;
+			margin-left: $header-nav--padding-h;
 		}
     }
 
@@ -72,7 +74,9 @@ nav {
     }
 
 	a.button {
-		margin: $header-nav--padding-h;
+		margin-right: $header-nav--padding-h;
+		margin-bottom: $header-nav--padding-h;
+		background-color: green;
 	}
 }
 

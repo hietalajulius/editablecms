@@ -5,7 +5,7 @@ import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import Image from "../elements/Image";
 import Modal from "../elements/Modal";
-import { CMSContext, CMSText } from "../../context";
+import { CMSText } from "../../context";
 
 const propTypes = {
   ...SectionProps.types,
@@ -72,19 +72,14 @@ const Hero = ({
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
-                  <Button
-                    tag="a"
-                    color="primary"
-                    wideMobile
-                    href="https://cruip.com/"
-                  >
+                  <Button tag="a" color="primary" wideMobile href="/staging">
                     Get started
                   </Button>
                   <Button
                     tag="a"
                     color="dark"
                     wideMobile
-                    href="https://github.com/cruip/open-react-template/"
+                    href="https://github.com/hietalajulius/editablecms"
                   >
                     View on Github
                   </Button>

@@ -66,19 +66,31 @@ export const CMSContextProvider = ({ initialContent, children }) => {
   );
 };
 
-export const CMSText = ({ CMSKey }) => {
+export const CMSText = ({ CMSKey, CMSIdx }) => {
   const CMS = useContext(CMSContext);
   const onTextChange = (e) => {
     if (CMS?.contentEditable) {
       CMS?.onContentChange(CMSKey, e.currentTarget.textContent);
     }
   };
-  return (
-    <span
-      contentEditable={CMS?.contentEditable}
-      onBlur={(e) => onTextChange(e)}
-    >
-      {CMS?.content?.fields[`${CMSKey}`]}
-    </span>
-  );
+
+  if (CMSIdx !== undefined) {
+    return (
+      <span
+        contentEditable={CMS?.contentEditable}
+        onBlur={(e) => onTextChange(e)}
+      >
+        {CMS?.content?.fields[`${CMSKey}`][CMSIdx]}
+      </span>
+    );
+  } else {
+    return (
+      <span
+        contentEditable={CMS?.contentEditable}
+        onBlur={(e) => onTextChange(e)}
+      >
+        {CMS?.content?.fields[`${CMSKey}`]}
+      </span>
+    );
+  }
 };

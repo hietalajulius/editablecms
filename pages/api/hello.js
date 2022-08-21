@@ -6,8 +6,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-console.log({ openai });
-
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const response = await openai.createCompletion({
